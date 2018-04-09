@@ -73,3 +73,75 @@ section p {
   font-size: 15px;
   text-indent: 2em;
 }
+
+.section3 div {
+  border: 1px solid #afafaf;
+  width: 130px;
+  height: 140px;
+  font-size: 5px;
+  text-align: center;
+  margin: 0 auto 15px 3em;
+}
+
+.section3 img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 5px auto;
+}
+
+.section4 table{
+  width: 100%;
+  border-collapse:collapse;
+  font-size: 10px;
+}
+
+table th,table td {
+  border:1px solid #ccc;
+  padding-left: 5px;
+}
+
+table th {
+  background-color: #000;
+  color: #fff;
+  text-align: left;
+}
+
+table tfoot {
+  background-color: #ccc;
+}
+
+.register {
+  width: 1280px;
+  background-color: #fff;
+  /* margin: 20px auto; */
+  padding: 5px 20px 40px 20px;
+  box-shadow: 1px 1px 1px 1px #6b6b6b;
+  border-radius: 1px;
+}
+
+h4 {
+  padding: 8px 10px;
+  box-shadow:-2px 0 0 0 #ccc
+}
+
+label { 
+  float: left; 
+  width: 40%; 
+  margin-right: 1em; 
+  text-align: right; 
+}
+
+form span {
+  float: left;
+  width: 50%;
+  text-align: right;
+}
+
+form input[type="submit"]{
+  width: 100%;
+  background-color: #3356cf;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+}

@@ -51,16 +51,18 @@
           </ul>
         </section>
 
-        <section class="section" id="s3">
+        <section class="section section3" id="s3">
           <h3>图片</h3>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现代著名哲♂学♂家<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/BillyHerrington.jpg" alt="Billy Herrington"></p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现代著名哲♂学♂家<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/BillyHerrington.jpg" alt="Billy Herrington"></p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现代著名哲♂学♂家<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/BillyHerrington.jpg" alt="Billy Herrington"></p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现代著名哲♂学♂家<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/BillyHerrington.jpg" alt="Billy Herrington"></p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现代著名哲♂学♂家<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/BillyHerrington.jpg" alt="Billy Herrington"></p>
+          <div> 现代著名哲♂学♂家<br> <img src="images/BillyHerrington.jpg" alt="Billy Herrington"></div>
+          <div> 现代著名哲♂学♂家<br> <img src="images/BillyHerrington.jpg" alt="Billy Herrington"></div>
+          <div> 现代著名哲♂学♂家<br> <img src="images/BillyHerrington.jpg" alt="Billy Herrington"></div>
+          <div> 现代著名哲♂学♂家<br> <img src="images/BillyHerrington.jpg" alt="Billy Herrington"></div>
+          <div> 现代著名哲♂学♂家<br> <img src="images/BillyHerrington.jpg" alt="Billy Herrington"></div>
+          <div> 现代著名哲♂学♂家<br> <img src="images/BillyHerrington.jpg" alt="Billy Herrington"></div>
+          <div> 现代著名哲♂学♂家<br> <img src="images/BillyHerrington.jpg" alt="Billy Herrington"></div>
         </section>
 
-        <section class="section" id="s4">
+        <section class="section section4" id="s4">
           <h2>最后一篇文章一级标题</h2>
           <h3>文章二级标题</h3>
           <span class="author">文章作者 <time>文章发表时间</time> </span>
@@ -69,8 +71,8 @@
             <li>排名2</li>
             <li>排名3</li>
           </ol>
-          下面是一个表格，给表格加了border="1"好让你看出是一个表格
-          <table border="1">
+          
+          <table>
             <!-- <caption>表格标题</caption> -->
             <thead>
               <tr>
@@ -103,9 +105,9 @@
             </tbody>
             <tfoot>
               <tr>
-                <td>总计</td>
+                <td><b>总计</b></td>
                 <!-- 跨行或跨列的表格单元格:colspan rowspan -->
-                <td colspan="2">1000</td>
+                <td colspan="2"><b>1000</b></td>
               </tr>
             </tfoot>
           </table>
@@ -114,30 +116,31 @@
       </article>
 
       <aside class="register">
-        <h4>这里以后是一个侧栏，这是侧栏标题</h4>
+        <h4> 这里以后是一个侧栏，这是侧栏标题</h4>
 
         <form action="index.html" method="post">
-          请输入邮箱地址：<input type="email" name="user_email" placeholder="请输入邮箱地址"><br><br>
-          邮箱地址请按照要求格式输入：xxxx@xx.xx<br><br>
-          请输入密码： <input type="password" name="pwd" placeholder="请输入邮箱密码">
-          请重复输入密码：<input type="password" name="pwd" placeholder="请重复输入邮箱密码"><br><br>
-          密码为6-16位英文数字 <br>
-          性别：
-          <input type="radio" name="sex" value="male">男
-          <input type="radio" name="sex" value="female">女
-          城市：
+          <label>请输入邮箱地址</label><input type="email" name="user_email" placeholder="请输入邮箱地址"><br>
+          <span>邮箱地址请按照要求格式输入：</span>xxxx@xx.xx<br>
+          <label>请输入密码</label><input type="password" name="pwd" placeholder="请输入邮箱密码"><br>
+          <label>请重复输入密码</label><input type="password" name="pwd" placeholder="请重复输入邮箱密码"><br>
+          <span>密码为6-16位英文数字</span> <br>
+          <label> 性别</label><input type="radio" name="sex" value="male">男 <input type="radio" name="sex" value="female">女<br>
+          <label>城市</label>
           <select class="" name="city">
             <option value="beijing">北京</option>
             <option value="shanghai">上海</option>
             <option value="guangzhou">广州</option>
             <option value="shenzhen">深圳</option>
           </select>
-          爱好：
+        <br>
+        <label>爱好</label>
           <input type="checkbox">运动
           <input type="checkbox">艺术
           <input type="checkbox">科学
-          个人描述：
-          <textarea name="profile" rows="2" cols="24">这是一个多行输入框，输入您的个人描述</textarea>
+          <br>
+          <label>个人描述</label>
+          <textarea name="profile" rows="5" cols="40">这是一个多行输入框，输入您的个人描述</textarea>
+          <br>
            <input type="submit" name="submit-btn" value="提交按钮">
         </form>
       </aside>
