@@ -40,7 +40,8 @@ nav a {
 
 .section,.section1, .register {
   line-height: 25px;
-  width: 1280px;
+  width: 60%;
+  min-width: 500px;
   background-color: #fff;
   margin: 20px auto;
   padding: 20px 20px 40px 20px;
