@@ -74,27 +74,38 @@ section p {
   font-size: 15px;
   text-indent: 2em;
 }
-
-.section3 div {
+/* 图片 */
+.section3 .images {
   border: 1px solid #afafaf;
-  width: 130px;
-  height: 140px;
+  width: auto;
+  height: auto;
+  float: left;
   font-size: 5px;
   text-align: center;
-  margin: 0 auto 15px 3em;
+  clear: both;
+  margin-bottom: 20px;
+}
+.clearfix {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 
 .section3 img {
   display: block;
   width: 100px;
   height: 100px;
-  margin: 5px auto;
+  margin: 10px 10px;
 }
 
 .section4 table{
   width: 100%;
   border-collapse:collapse;
   font-size: 10px;
+  display: block;
 }
 
 table th,table td {
