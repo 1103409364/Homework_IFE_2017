@@ -84,6 +84,7 @@ section p {
   text-align: center;
   clear: both;
   margin-bottom: 20px;
+  margin-left: 40px;
 }
 .clearfix {
   visibility: hidden;
