@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .news {
+            width: 310px;
+            border-top: 2px solid #206f96;
+            margin: 100px;
+        }
+
+        .news .news-nav li {
+            float: left;
+            width: 102px;
+            border-right: 1px solid #cfcfcf;
+            border-bottom: 1px solid #cfcfcf;
+            list-style: none;
+            text-align: center;
+            padding-top: 1px;
+            /* 英文字体不同会导致数字、空格与设计图对不上 */
+            font-family: sans-serif, "SimSun", "MicroSoft Yahei";
+            font-size: 14px;
+            line-height: 28px;
+            background-color: #f4f4f4;
+
+        }
+
+        .news .news-nav li.active {
+            border-left: 1px solid #cfcfcf;
+            border-bottom: 1px solid #fff;
+            font-weight: bold;
+            background-color: #fff;
+
+        }
+
+        .news .news-list li {
+            list-style: none;
+        }
+
+        .news .news-list li a {
+            text-decoration: none;
+            font: 14px/27px "SimSun";
+            color: #000;
+        }
+
+        .news .news-list li.first a {
+            font-weight: bold;
+        }
+
+        .news .news-nav ul {
+            overflow: hidden;
+        }
+
+        .news ul.news-list {
+            padding-top: 18px;
+            padding-left: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="news">
+        <div class="news-nav">
+            <ul>
+                <li class="active">新闻</li>
+                <li>图片</li>
+                <li>军事&nbsp;航空</li>
+            </ul>
+        </div>
+        <ul class="news-list">
+            <li class="first">
+                <a href="#">习近平离京访问捷克并出席核安全峰会</a>
+            </li>
+            <li>
+                <a href="#">习近平在捷克发文 热议 出访专题 这三年</a>
+            </li>
+            <li>
+                <a href="#">李克强:亚洲国家较含蓄 更需开放交流 在博鳌</a>
+            </li>
+            <li>
+                <a href="#">张德江会客 江泽民为《世界名曲45首》作序</a>
+            </li>
+            <li>
+                <a href="#">酒店枕头下现近万现金 房客怒投诉:没换枕套</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
