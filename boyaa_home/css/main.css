@@ -70,8 +70,8 @@ header .nav li.nav-join {
 }
 
 .banner {
-    background: url(../img/banner1.png) no-repeat center center;
-    background-color: #80d1ef;
+    background: url(../img/banner1.png) no-repeat center top;
+    background-color: #5EC4EA
 }
 
 .banner .banner-img {
@@ -114,32 +114,53 @@ header .nav li.nav-join {
     width: 1000px;
     margin: 0 auto;
 }
-.main nav {
+.main ul.game {
     border-bottom: 1px solid #dbe1e7;
     overflow: hidden;
-}
-.main nav div {
-    width: 219px;
-    float: left;
-    margin-right: 42px;
     padding-top: 50px;
-    padding-bottom: 44px;
-}
-.main nav div:nth-last-of-type(1) {
-    margin-right: -4px;
+    padding-bottom: 32px; 
 }
 
-.main nav div h3 {
+.main ul.game li {
+    float: left;
+    list-style: none;
+    text-align: center;
+}
+
+.main ul.game li h3 {
     font-weight: 700;
     text-align: center;
     font: 14px/25px "Hiragino Sans GB","MicroSoft Yahei";
     margin-top: 9px;
 }
-.main nav div h4 {
+.main ul.game li a span {
+    padding-right: 10px;
     color:#38b774;
     text-align: center;
-    font: 14px/21px "Hiragino Sans GB";
+    font: 12px/21px "Hiragino Sans GB";
+    background: url(../img/arrow.png) no-repeat right center;
 }
+
+.main ul.game a {
+    text-decoration: none;
+    display: block;
+    width: 218px;
+    margin-right: 42px;
+    padding-bottom: 12px;
+}
+.main ul.game li a:hover {
+    color: #fff;
+    background-color: #38b774;
+}
+.main ul.game li a:hover span{
+    color: #fff;
+    background: url(../img/arrow2.png) no-repeat right center;
+}
+.main ul.game li:nth-last-of-type(1) a{
+    margin-right: -1px;
+}
+
+
 
 .main .slider {
     padding: 0 7px;
