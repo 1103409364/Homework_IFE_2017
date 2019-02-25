@@ -48,6 +48,7 @@ header .nav .boya-logo a {
     float: left;
     border-right: none;
     text-indent: -999rem;
+    overflow: hidden;
     width: 226px;
     height: 58px;
     background: url(../img/icon-boya.png) no-repeat center center;
