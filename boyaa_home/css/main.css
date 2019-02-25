@@ -74,22 +74,22 @@ header .nav li.nav-join {
 }
 
 .banner {
-    background: url(../img/banner1.png) no-repeat center top;
     background-color: #5EC4EA
 }
 
 .banner .banner-img {
-    width: 1000px;
+    background: url(../img/banner1.png) no-repeat center top;
     height: 463px;
     margin: 0 auto;
     position: relative;
 }
-
+/* 居中 */
 .banner .slider {
     /* width: 108px; */
     position: absolute;
-    left: 428px;
-    top: 430px;
+    left: 50%;
+    bottom: 19px;
+    margin-left: -57px;
 }
 
 .slider i {
