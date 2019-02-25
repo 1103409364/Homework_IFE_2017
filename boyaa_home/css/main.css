@@ -165,12 +165,10 @@ header .nav li.nav-join {
     margin-right: 0px;
 }
 
-
-
 .main .slider {
     padding: 0 7px;
     position: absolute;
-    top: 277px;
+    top: 279px;
     left: 442px;
     background-color: #fff;
 }
@@ -203,18 +201,24 @@ header .nav li.nav-join {
 }
 
 .info  a.btn {
-    display: block;
     width: 65px;
+    height: 26px;
     border: 1px solid #2fbc71;
     border-radius: 4px;
     position: absolute;
     left: 219px;
     top: 41px;
-
-    font:14px/27px "Hiragino Sans GB";
+    font-size: 12px;
+    line-height: 19px;
+    font-family: "Hiragino Sans GB";
     text-align: center;
     text-decoration: none;
     color: #2fbc71;
+}
+
+.info .boya-news a.btn:hover {
+    color: #fff;
+    background-color: #2f9e63;
 }
 
 .info .boya-news ul.newlist {
@@ -281,11 +285,19 @@ header .nav li.nav-join {
     color: #fff;
     border: 1px solid #fff;
 }
+.boya-recruitment a.btn:hover {
+    color: #2fbc71;
+    background-color: #fff;
+}
 
 .boya-recruitment dl.bd {
     padding-top: 23px;
     padding-left: 20px;
     font-size: 14px;
+}
+.boya-recruitment dl.bd a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .boya-recruitment dl.bd dt {
