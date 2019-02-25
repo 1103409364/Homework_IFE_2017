@@ -1,0 +1,302 @@
+/* 版心1000 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", 宋体, Arial, Tahoma, Helvetica, Geneva, sans-serif;
+}
+
+header {
+    background-color: #191d3a;
+}
+
+header .nav {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header .nav li {
+    float: left;
+    list-style: none;
+}
+
+header .nav a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font: 14px/58px "Sum-Sun";
+    color: #818496;
+    width: 85px;
+    border-right: 1px solid #252947;
+}
+
+header .nav li a:hover {
+    color: #fff;
+}
+
+header .nav li.nav-active a {
+    color: #fff;
+    text-align: center;
+    background-color: #252947;
+}
+
+header .nav .boya-logo a {
+    float: left;
+    border-right: none;
+    text-indent: -999rem;
+    width: 226px;
+    height: 58px;
+    background: url(../img/icon-boya.png) no-repeat center center;
+}
+
+header .nav li.nav-join a {
+    color: #fff;
+    background-color: #38b774;
+    border-right: none;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 3px;
+}
+
+header .nav li.nav-join {
+    /* vertical-align: middle; */
+    padding-left: 52px;
+    padding-top: 12px;
+}
+
+.banner {
+    background: url(../img/banner1.png) no-repeat center center;
+    background-color: #80d1ef;
+}
+
+.banner .banner-img {
+    width: 1000px;
+    height: 463px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.banner .slider {
+    /* width: 108px; */
+    position: absolute;
+    left: 428px;
+    top: 430px;
+}
+
+.slider i {
+    display: block;
+    float: left;
+    margin: 0 7px;
+    background-color: #fff;
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+    text-indent: -999em;
+    border-radius: 50%;
+}
+
+.banner .slider i.active {
+    opacity: 1;
+}
+
+/* main部分 */
+.main {
+    background: url(../img/indexmainbg.jpg) no-repeat center bottom;
+}
+
+.wraper {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+}
+.main nav {
+    border-bottom: 1px solid #dbe1e7;
+    overflow: hidden;
+}
+.main nav div {
+    width: 219px;
+    float: left;
+    margin-right: 42px;
+    padding-top: 50px;
+    padding-bottom: 44px;
+}
+.main nav div:nth-last-of-type(1) {
+    margin-right: -4px;
+}
+
+.main nav div h3 {
+    font-weight: 700;
+    text-align: center;
+    font: 14px/25px "Hiragino Sans GB","MicroSoft Yahei";
+    margin-top: 9px;
+}
+.main nav div h4 {
+    color:#38b774;
+    text-align: center;
+    font: 14px/21px "Hiragino Sans GB";
+}
+
+.main .slider {
+    padding: 0 7px;
+    position: absolute;
+    top: 277px;
+    left: 442px;
+    background-color: #fff;
+}
+
+.main .slider i {
+    background-color: #b5c0cb;
+}
+.main .slider i.active {
+    background-color: #2fbc71;
+}
+
+.info {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 53px;
+    padding-bottom: 52px;
+    overflow: hidden;
+}
+
+.info div.boya-news,
+.info div.boya-recruitment {
+    width: 500px;
+    float: left;
+}
+
+.info .boya-news {
+    position: relative;
+    padding-top: 120px;
+    background: url(../img/bynewsbg.jpg) no-repeat 0 0;
+}
+
+.info  a.btn {
+    display: block;
+    width: 65px;
+    border: 1px solid #2fbc71;
+    border-radius: 4px;
+    position: absolute;
+    left: 219px;
+    top: 41px;
+
+    font:14px/27px "Hiragino Sans GB";
+    text-align: center;
+    text-decoration: none;
+    color: #2fbc71;
+}
+
+.info .boya-news ul.newlist {
+    padding-left: 20px;
+}
+
+.info .boya-news .newlist li {
+    width: 460px;
+    list-style: none;
+    border-bottom: 1px solid #dbe1e7;
+}
+
+.info .boya-news .newlist li a {
+    text-decoration: none;
+    color: #444866;
+    line-height: 50px;
+    font-size: 14px;
+    font-family: "MicroSoft Yahei"
+}
+
+.info .boya-news .newlist li.first a{
+    line-height: 14px;
+    height: 33px;
+    display: block;
+    padding-top: 9px;
+}
+
+.info .boya-news .newlist li a:hover {
+    color: #2fbc71;
+}
+
+.info .boya-news .newlist li span {
+    color: #afbecf;
+    font-size: 13px;
+    margin-right: 21px
+}
+
+.boya-recruitment {
+    color: #fff;
+    background: url(../img/byhrbg3.jpg) no-repeat 0 0;
+}
+
+.boya-recruitment {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 52px;
+}
+
+.boya-recruitment .hd {
+    padding-left: 80px;
+}
+
+.boya-recruitment .hd h3{
+    font-size: 30px;
+    line-height: 36px;
+}
+.boya-recruitment .hd h4{
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 13px;
+}
+
+.boya-recruitment a.btn {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.boya-recruitment dl.bd {
+    padding-top: 23px;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.boya-recruitment dl.bd dt {
+    line-height: 19px;
+    font-weight: bold;
+}
+
+.boya-recruitment dl.bd dd {
+    width: 305px;
+    line-height: 37px;
+    border-bottom: 1px solid #6fdea3;
+}
+
+/* footer */
+footer {
+    background-color: #191d3a;
+}
+
+footer p {
+    color: #6c6e7e;
+    width: 1000px;
+    font: 12px/91px "MicroSoft Yahei","SimSun";
+    margin: 0 auto;
+    padding-left: 5px;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #6c6e7e;
+}
+footer p a:hover {
+    color: #fff;
+}
+footer p span {
+    margin-right: 169px;
+}
+footer p img {
+    width: 38px;
+    vertical-align: middle
+}
