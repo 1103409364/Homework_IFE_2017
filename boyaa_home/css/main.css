@@ -20,7 +20,12 @@
 }
 
 .nomargin {
-    margin: 0;
+    margin: 0 !important;
+}
+
+.hidden {
+    height: 0;
+    overflow: hidden;
 }
 
 body {
@@ -109,6 +114,9 @@ header .language a {
     line-height: 58px;
     color: #3a4866;
     text-decoration: none;
+}
+header .language a:hover {
+    color: #fff;
 }
 
 header .language a.cn {
@@ -208,14 +216,14 @@ header .language .active {
 }
 
 .main ul.game img {
-    width: 218px;
+    width: 217px;
 }
 
 .main ul.game a {
     text-decoration: none;
     color: #444866;
     display: block;
-    width: 218px;
+    width: 217px;
     margin-right: 42px;
     padding-bottom: 12px;
 }
@@ -223,6 +231,7 @@ header .language .active {
 .main ul.game li a:hover {
     color: #fff;
     background-color: #38b774;
+    transition: all 0.5s;
 }
 
 .main ul.game li a:hover span {
