@@ -1,9 +1,7 @@
-/* 版心1000 */
-
-* {
+/* * {
     margin: 0;
     padding: 0;
-}
+} */
 
 .inner_center {
     width: 960px;
@@ -27,9 +25,9 @@
     overflow: hidden;
 }
 
-body {
+html {
     color: #fff;
-    background-color: #130006;
+    background: #130006;
     font-size: 14px;
     font-family: Arial, "Microsoft YaHei", "SimSun", Tahoma, Helvetica, Geneva, sans-serif;
 }
