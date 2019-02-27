@@ -1,0 +1,215 @@
+/* 版心1000 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.inner_center {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.clearfix::before, .clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.nomargin {
+    margin: 0 !important;
+}
+
+.hidden {
+    height: 0;
+    overflow: hidden;
+}
+
+body {
+    color: #fff;
+    background-color: #130006;
+    font-size: 14px;
+    font-family: Arial, "Microsoft YaHei", "SimSun", Tahoma, Helvetica, Geneva, sans-serif;
+}
+
+/* header */
+
+header {
+    padding: 12px 0 50px 0;
+    background: url(../img/homehead.png) no-repeat center top;
+    position: relative;
+    z-index: 1;
+}
+
+header .wraper {
+    height: 50px;
+    background-color: #000;
+}
+
+header ul li {
+    float: left;
+    list-style: none;
+}
+
+header ul li:nth-of-type(3) {
+    margin-right: 270px;
+}
+
+header ul li a {
+    text-align: center;
+    display: block;
+    width: 113px;
+    line-height: 50px;
+    text-decoration: none;
+    color: #fff;
+}
+
+header ul li a:hover {
+    background: url(../img/icons.png) no-repeat 0 5px;
+}
+
+header .logo h1 {
+    text-indent: -999em;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 999;
+    margin-left: -225px;
+    width: 450px;
+    height: 280px;
+    background: url(../img/logo.png) no-repeat center top;
+}
+
+/* main */
+main {
+    position: relative;
+    height: 516px;
+}
+
+main .banner {
+    height: 566px;
+    position: absolute;
+    left: 50%;
+    margin-left: -960px;
+    top: -50px;
+}
+
+main .banner .product {
+    position: absolute;
+    left: 50%;
+    margin-left: -270px;
+    bottom: 0;
+}
+
+main .banner .product li {
+    float: left;
+    list-style: none;
+}
+
+main .banner .product li:hover {
+    background: url(../img/icons.png) no-repeat -120px -103px;
+}
+
+main .banner .product li h3 {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    position: relative;
+    top: 3px;
+    z-index: -1;
+}
+main .banner .product li:hover h3{
+    z-index: 1;
+}
+
+main .banner .product li a {
+    display: block;
+    width: 160px;
+    padding: 10px;
+    opacity: 0.8;
+    background-color: #2e2e2e8e;
+}   
+main .banner .product li a:hover {
+    display: block;
+    width: 160px;
+    padding: 10px;
+    opacity: 1;
+    background-color:  #2e2e2e00;
+}   
+
+main .banner .product li img {
+    width: 160px;
+    height: 90px;
+}
+
+main a.leftBtn,
+main a.rightBtn{
+    position: absolute;
+    width: 49px;
+    height: 78px;
+    margin-top: -39px;
+}
+
+main a.leftBtn  {
+    top: 50%;
+    left: 20px;
+    background: url(../img/icons.png) no-repeat -373px 0;
+}
+main a.rightBtn  {
+    top: 50%;
+    right: 20px;
+    background: url(../img/icons.png) no-repeat -451px 0;    
+}
+
+main a.leftBtn:hover {
+    background: url(../img/icons.png) no-repeat -373px -104px;
+}
+
+main a.rightBtn:hover{
+    background: url(../img/icons.png) no-repeat -451px -104px;
+}
+
+footer {
+    background: url(../img/footer.jpg) no-repeat top center;
+}
+
+footer ul {
+   width: 455px;
+   margin: 0 auto;
+   padding-top: 30px;
+}
+
+footer .links li {
+    float: left;
+    list-style: none;
+    line-height: 21px;
+}
+
+footer .links li a {
+    opacity: 0.5;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    border-right: 1px solid #766970;
+    padding: 0 10px;
+}
+footer .links li a:hover {
+    opacity: 1;
+}
+
+footer .links li:nth-last-of-type(1) a{
+    border-right: none;
+    padding-right: 0;
+}
+
+footer .copyright,
+footer p {
+    opacity: 0.5;
+    text-align: center;
+    font-size: 12px;
+    line-height: 21px;
+}
