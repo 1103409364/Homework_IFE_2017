@@ -48,6 +48,11 @@ header .wraper {
     background-color: #000;
 }
 
+header nav {
+    position: relative;
+    z-index: 999;
+}
+
 header ul li {
     float: left;
     list-style: none;
@@ -85,64 +90,23 @@ header .logo h1 {
 /* main */
 main {
     position: relative;
-    height: 516px;
+    height: 516px; 
 }
 
 main .banner {
+    width: 100%;
+    height: 566px;
+    position: absolute;
+    top: -50px;
+    overflow: hidden;
+}
+
+main .banner img.b {
     height: 566px;
     position: absolute;
     left: 50%;
+    top: 0;
     margin-left: -960px;
-    top: -50px;
-}
-
-main .banner .product {
-    position: absolute;
-    left: 50%;
-    margin-left: -270px;
-    bottom: 0;
-}
-
-main .banner .product li {
-    float: left;
-    list-style: none;
-}
-
-main .banner .product li:hover {
-    background: url(../img/icons.png) no-repeat -120px -103px;
-}
-
-main .banner .product li h3 {
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    line-height: 20px;
-    position: relative;
-    top: 3px;
-    z-index: -1;
-}
-main .banner .product li:hover h3{
-    z-index: 1;
-}
-
-main .banner .product li a {
-    display: block;
-    width: 160px;
-    padding: 10px;
-    opacity: 0.8;
-    background-color: #2e2e2e8e;
-}   
-main .banner .product li a:hover {
-    display: block;
-    width: 160px;
-    padding: 10px;
-    opacity: 1;
-    background-color:  #2e2e2e00;
-}   
-
-main .banner .product li img {
-    width: 160px;
-    height: 90px;
 }
 
 main a.leftBtn,
@@ -171,7 +135,59 @@ main a.leftBtn:hover {
 main a.rightBtn:hover{
     background: url(../img/icons.png) no-repeat -451px -104px;
 }
+/* 中间展示横条 */
+main .banner .mask {
+    width: 100%;
+    background:url(../img/b.png) no-repeat center bottom; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
 
+main .banner .product {
+    width: 540px;
+    height: 113px;
+    margin: 0 auto;
+    /* img继承后居中，自动产生空隙 */
+    text-align: center;
+}
+
+main .banner .product li {
+    float: left;
+    list-style: none;
+}
+
+main .banner .product li h3 {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 32px;
+    visibility: hidden;
+}
+main .banner .product li:hover h3 {
+    visibility: visible;
+}
+
+main .banner .product li img {
+    width: 160px;
+    opacity: 0.5;
+}
+main .banner .product li img:hover {
+    width: 160px;
+    opacity: 1;
+} 
+
+ main .banner .product li a {
+    width: 180px;
+    height: 133px;
+    display: block;
+}   
+
+main .banner .product li a:hover {
+    background:url(../img/icons.png) no-repeat -120px -99px;
+}   
+
+/* footer */
 footer {
     background: url(../img/footer.jpg) no-repeat top center;
 }

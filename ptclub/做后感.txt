@@ -1,0 +1,7 @@
+用了很多position 定位，绝对定位脱离标准流，无法撑高父盒子，父盒子必须写宽高
+
+banner注意缩放后不要出现滚动条，overflow:hidden;
+
+img相当于文本，可以用 text-align: center;来产生相同的间隙，不用padding。
+
+visibility: hidden;和display:none;不同，前者不显示依然占用位置
