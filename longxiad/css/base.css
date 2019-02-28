@@ -1,0 +1,33 @@
+.nomargin {
+    margin: 0 !important;
+}
+
+/* 清除浮动 */
+.clearfix::before, .clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.hidden {
+    height: 0;
+    overflow: hidden;
+}
+/* 版心1000 */
+
+.inner_center {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+body {
+    color: #636363;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "SimSun", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
