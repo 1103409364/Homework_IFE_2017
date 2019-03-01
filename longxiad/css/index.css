@@ -18,10 +18,13 @@ header .banner ul li img {
     position: absolute;
     left: 50%;
     margin-left: -960px;
+    transition: all 2s;
+    opacity: 0;
 }
 
 header .banner ul li.current img{
     z-index: 1;
+    opacity: 1;
 }
 
 header aside {
