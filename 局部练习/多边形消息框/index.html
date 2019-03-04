@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box {
+            font-size: 12px;
+            text-align: center;
+            line-height: 50px;
+            width: 200px;
+            height: 50px;
+            border: 2px solid red;
+            box-shadow: 4px 4px 0 red;
+            position: relative;
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            background-color: #fff;
+            height: 25px;
+            width: 20px;
+            border-right: 2px solid red;
+            left: -9px;
+            top: -13px;
+            transform: rotate(50deg);
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            background-color: #fff;
+            height: 25px;
+            width: 20px;
+            border-left: 8px solid red;
+            right: -14px;
+            bottom:  -15px;
+            transform: rotate(50deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        绝对定位+旋转+白色背景覆盖
+    </div>
+</body>
+
+</html>
+
