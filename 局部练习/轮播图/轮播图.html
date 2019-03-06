@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<input id="before" type="button" value="上一张" />
+	<img id="img" src="images/1.jpeg" alt="" />
+	<input id="after" type="button" value="下一张" />
+
+	<script type="text/javascript">
+		// 替换图片实现，也可以先加载图片。用定位重叠，改class加载不同z-index实现
+		var img = document.getElementById("img");
+		var beforeBtn = document.getElementById("before");
+		var afterBtn = document.getElementById("after");
+		var picNum = 1;
+
+		beforeBtn.onclick = function () {
+			picNum--;
+			if (picNum <= 0) {
+				picNum = 5;
+			}
+			img.src = "images/" + picNum + ".jpeg";
+		}
+		afterBtn.onclick = function () {
+			picNum++;
+			if (picNum > 5) {
+				picNum = 1;
+			}
+			img.src = "images/" + picNum + ".jpeg";
+		}
+	</script>
+</body>
+
+</html>
