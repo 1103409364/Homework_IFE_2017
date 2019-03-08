@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/cssreset-min.css">
+    <style>
+        .carouselWrap {
+            /* 清除空格 */
+            font-size: 0;
+            margin: 100px auto;
+            position: relative;
+            border: 5px solid #000;
+            width: 800px;
+            /* 子元素定位，无法撑起父元素高度 */
+            height: 130px;
+            overflow: hidden;
+        }
+        
+        .carouselWrap .imgUl {
+            width: 5000px;
+            position: absolute;
+            left: 0;
+        }
+
+        .carouselWrap .imgUl li {
+            float: left;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carouselWrap" id="carouselWrap">
+        <ul class="imgUl clearfix" id="imgUl">
+            <li><a href="#"><img src="img/0.png" alt=""></a></li>
+            <li><a href="#"><img src="img/1.png" alt=""></a></li>
+            <li><a href="#"><img src="img/2.png" alt=""></a></li>
+            <li><a href="#"><img src="img/3.png" alt=""></a></li>
+            <li><a href="#"><img src="img/4.png" alt=""></a></li>
+            <li><a href="#"><img src="img/5.png" alt=""></a></li>
+            <li><a href="#"><img src="img/6.png" alt=""></a></li>
+            <li><a href="#"><img src="img/7.png" alt=""></a></li>
+            <li><a href="#"><img src="img/8.png" alt=""></a></li>
+            <li><a href="#"><img src="img/9.png" alt=""></a></li>
+        </ul>
+    </div>
+
+    <script src="js/animate-2.0.1.js"></script>
+    <script>
+        var carouselWrap = document.getElementById("carouselWrap");
+        var imgUl = document.getElementById("imgUl");
+        var imgLi = imgUl.getElementsByTagName("li");
+        // 当前图片编号
+        var nowIdx = 0;
+
+        var interval = 1000;
+        var imgLength = imgLi.length;
+        var width = 200;
+        var time = 500;
+        imgUl.innerHTML += imgUl.innerHTML;
+        
+        var id = setInterval(function(){
+            // 当最后一张图片走完时，立即把火车拉回起点：真0换假0，下一次应该轮到1
+            if(nowIdx == imgLength) {
+                imgUl.style.left = "0px";
+                nowIdx = 0;
+            }
+
+            nowIdx++;
+
+            animate(imgUl, {left: -width*nowIdx}, time, "Linear");
+            
+        }, interval)
+    </script>
+</body>
+</html>
