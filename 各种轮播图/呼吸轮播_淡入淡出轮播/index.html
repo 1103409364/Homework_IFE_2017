@@ -68,7 +68,8 @@
         }
 
         //右按钮的事件处理程序
-        function rightBtnHandler() {            
+        function rightBtnHandler() { 
+            if(imgLi[nowIdx].isanimated) return;           
             // 这张淡出，下一张淡入
             animate(imgLi[nowIdx], {opacity: 0}, time);
             nowIdx++;
