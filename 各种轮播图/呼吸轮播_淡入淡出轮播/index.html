@@ -84,6 +84,7 @@
         leftBtn.onclick = leftBtnHandler;
 
         function leftBtnHandler() {
+            if(imgLi[nowIdx].isanimated) return;
             // 这张淡出，下一张淡入
             animate(imgLi[nowIdx], {opacity: 0}, time);
             nowIdx--;
@@ -98,34 +99,31 @@
 
         for(var i = 0; i < imgLength; i++) {
             // 小圆点业务IIFE写法
-            // (function(i) {
-            // 	circleSliderLi[i].onclick = function() {
-            // 		//点击右按钮的时候，运动机构本身在运动，就不让右按钮有任何作用
-            // 		if(m_unit.isanimated) return;
+            (function(i) {
+            	circleSliderLi[i].onclick = function() {
+            		//点击右按钮的时候，运动机构本身在运动，就不让右按钮有任何作用
+            		if(imgLi[nowIdx].isanimated) return;
 
-            // 		// 小圆点的点击业务
-            // 		nowIndex = i;
-            // 		animate(m_unit, { "left": -width * nowIndex }, animateTime, tween);
-            // 		changeCircle();
-            // 	}
-            // })(i)
+                    // 小圆点的点击业务
+                    animate(imgLi[nowIdx], {opacity: 0}, time);
+            		nowIdx = i;
+            		animate(imgLi[nowIdx], {opacity: 1}, time);
+            		changeCircle();
+            	}
+            })(i)
 
             // 小圆点业务添加对象属性写法
-            circleSliderLi[i].index = i;	//先编号
-            circleSliderLi[i].onclick = function(){
-                //点击小圆点的时候，运动机构本身在运动，就不让右按钮有任何作用
-                // if(imgLi[this.index].isanimated) return;
-                // for(var i = 1; i < circleSliderLi.length; i++){
-                //     circleSliderLi[i],sytle.opacity = 0;
-                // }
-                //小圆点的点击业务
-                animate(imgLi[nowIdx], {opacity: 0}, time);
-                nowIndex = this.index;
-                console.log(nowIdx);
+            // circleSliderLi[i].index = i;	//先编号
+            // circleSliderLi[i].onclick = function(){
+            //     //点击小圆点的时候，运动机构本身在运动，就不让右按钮有任何作用
+            //     if(imgLi[nowIdx].isanimated) return;
+            //     //小圆点的点击业务
+            //     animate(imgLi[nowIdx], {opacity: 0}, time);
+            //     nowIdx = this.index;
                 
-                animate(imgLi[nowIdx], {opacity: 1}, time);
-                changeCircle();
-            }
+            //     animate(imgLi[nowIdx], {opacity: 1}, time);
+            //     changeCircle();
+            // }
         }
 
         //更换小圆点函数
