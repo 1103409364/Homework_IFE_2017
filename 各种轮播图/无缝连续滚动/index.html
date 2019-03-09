@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>无缝连续滚动</title>
 
     <link rel="stylesheet" href="css/cssreset-min.css">
     <style>
-        .carouselWrap {
+        .infiniteScroll {
             /* 清除空格 */
             font-size: 0;
-            margin: 100px auto;
+            margin: 0 auto;
             position: relative;
             border: 5px solid #000;
             width: 800px;
@@ -18,13 +18,13 @@
             overflow: hidden;
         }
         
-        .carouselWrap .imgUl {
+        .infiniteScroll .imgUl {
             width: 5000px;
             position: absolute;
             left: 0;
         }
 
-        .carouselWrap .imgUl li {
+        .infiniteScroll .imgUl li {
             float: left;
         }
 
@@ -36,10 +36,15 @@
             visibility: hidden;
         }
 
+        h1 {
+            text-align: center;
+            line-height: 100px;
+        }
     </style>
 </head>
 <body>
-    <div class="carouselWrap" id="carouselWrap">
+    <h1>图片数量不定，图片宽度不定</h1>
+    <div class="infiniteScroll" id="infiniteScroll">
         <ul class="imgUl clearfix" id="imgUl">
             <li><a href="#"><img src="img/0.png" alt=""></a></li>
             <li><a href="#"><img src="img/1.png" alt=""></a></li>
@@ -56,30 +61,59 @@
 
     <script src="js/animate-2.0.1.js"></script>
     <script>
-        var carouselWrap = document.getElementById("carouselWrap");
+        var infiniteScroll = document.getElementById("infiniteScroll");
         var imgUl = document.getElementById("imgUl");
         var imgLi = imgUl.getElementsByTagName("li");
+
+        var imgs = imgUl.getElementsByTagName("img");	
         // 当前图片编号
         var nowIdx = 0;
 
-        var interval = 1000;
+        // var interval = 6000;
         var imgLength = imgLi.length;
-        var width = 200;
-        var time = 500;
+        var time = 6000;
+
         imgUl.innerHTML += imgUl.innerHTML;
+        // 折返点
+        var turningPoint;
+        var width;
+
+        //计算折返点，但是每个li的宽度都不一样，所以现在假火车的开头元素的offsetLeft就是折返点
+        // 这个元素是lis[lislength / 2];由于Chrome的机理，如果要读取offsetLeft值必须保证所有图片加载完毕。
+		for(var i = 0 , count = 0 ; i < imgs.length ; i++){
+			imgs[i].onload = function(){
+				count++;
+				if(count == imgs.length){
+					//所有图片加载完毕了，就有折返点了：
+					turningPoint = imgLi[imgLength].offsetLeft;
+                    //所有图片加载完毕了，再开始运动
+                    // 运动距离是整个ul的长度，也就是假0的offsetLeft
+                    width = turningPoint;
+                    move();
+				}
+			}
+		}
         
-        var id = setInterval(function(){
-            // 当最后一张图片走完时，立即把火车拉回起点：真0换假0，下一次应该轮到1
-            if(nowIdx == imgLength) {
-                imgUl.style.left = "0px";
-                nowIdx = 0;
+        // 用递归实现无限滚动
+        function move() {
+           var timerId =  animate(imgUl, {left: -width}, time, function() {
+                this.style.left = 0;
+                move();
+            });
+            //鼠标进入停止移动
+            infiniteScroll.onmouseover = function(){
+                clearInterval(timerId);
+                
             }
+        	//鼠标离开继续移动
+            infiniteScroll.onmouseout = function(){
+                move();
+            }
+        }
 
-            nowIdx++;
+      
 
-            animate(imgUl, {left: -width*nowIdx}, time, "Linear");
-            
-        }, interval)
+	
     </script>
 </body>
 </html>

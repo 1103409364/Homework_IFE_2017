@@ -13,7 +13,7 @@
  * @para2  time是运动总时间，毫秒为单位
  * @para3  tweenString缓冲描述词，比如"Linear"，可选
  * @para4  callback是回调函数，可选
- * return	本函数没有返回值
+ * return 定时器id
  */
 function animate(elem, targetJSON, time, tweenString, callback) {
 	//函数重载，用户传进来的参数数量、类型可能不一样
@@ -288,4 +288,6 @@ function animate(elem, targetJSON, time, tweenString, callback) {
 			else return Tween.BounceEaseOut(t * 2 - d, 0, c, d) * .5 + c * .5 + b;
 		}
 	};
+	// 返回定时器id
+	return timer;
 }
