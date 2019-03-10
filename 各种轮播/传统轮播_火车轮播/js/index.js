@@ -108,7 +108,9 @@ for(var i = 0; i < imgLength; i++) {
 //更换小圆点函数
 function changeCircle(){
     //n就是信号量的副本
-    var n = nowIndex % imgLength;
+    // var n = nowIndex % imgLength;
+    // 三元运算写法
+    var n = nowIndex == imgLength ? 0 : nowIndex;
     //判断副本的值==imgLength，那么就是0
 
     for (let i = 0; i < circleSliderLi.length; i++) {
