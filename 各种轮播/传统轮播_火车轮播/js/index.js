@@ -14,16 +14,21 @@ var leftBtn = document.getElementById("leftBtn");
 var circleSliderLi = document.getElementById("circleNav").getElementsByTagName("li");
 //复制节点前图片数量，真实数量
 var imgLength = lis.length;
-//图片宽度
-var width = 665;
-//滚动速度
-var animateTime = 600;
-//缓冲描述
-var tween = "BounceEaseOut";
-//自动轮播间隔时间
-var interval = 2000;
-// 信号量
-var nowIndex = 0; //0 1 2 3 4 5 6 。6是临时状态
+
+// 配置
+var option =  {
+    //图片宽度
+    width: 665,
+    //运动时间
+    animateTime: 600,
+    //缓冲描述
+    tween: "BounceEaseOut",
+    //自动轮播间隔时间
+    interval: 2000,
+    // 信号量
+    nowIndex:0, //0 1 2 3 4 5 6 。6是临时状态
+}
+
 
 //把0号li克隆，然后插入到图片ul的最后面
 m_unitUl.appendChild(m_unitLi[0].cloneNode(true));
@@ -31,14 +36,14 @@ m_unitUl.appendChild(m_unitLi[0].cloneNode(true));
 // 右按钮事件
 rightBtn.onclick = rightBtnHandler;
 //自动轮播
-var timer = setInterval(rightBtnHandler,interval);
+var timer = setInterval(rightBtnHandler,option.interval);
 //鼠标进入停止
 carousel.onmouseover = function(){
     clearInterval(timer);
 }
 //鼠标离开开始
 carousel.onmouseout = function(){
-    timer = setInterval(rightBtnHandler,interval);
+    timer = setInterval(rightBtnHandler,option.interval);
 }
 
 //右按钮的事件处理程序
@@ -46,12 +51,12 @@ function rightBtnHandler() {
     //点击右按钮的时候，运动机构本身在运动，就不让右按钮有任何作用
     if(m_unit.isanimated) return;
 
-    nowIndex++;
+    option.nowIndex++;
     changeCircle();
-    animate(m_unit, { "left": -width * nowIndex }, animateTime, tween, function () {
+    animate(m_unit, { "left": -option.width * option.nowIndex }, option.animateTime, option.tween, function () {
         //回调函数，就是动画执行完毕之后做的事情
-        if (nowIndex > imgLength - 1) {
-            nowIndex = 0;
+        if (option.nowIndex > imgLength - 1) {
+            option.nowIndex = 0;
             // 拉回0
             this.style.left = "0px";
         }
@@ -66,14 +71,14 @@ function leftBtnHandler() {
     if(m_unit.isanimated) return;
     
     // 左按钮业务
-    nowIndex--;
-    if(nowIndex < 0){
-        nowIndex = imgLength - 1;
+    option.nowIndex--;
+    if(option.nowIndex < 0){
+        option.nowIndex = imgLength - 1;
         // 第0张图片向左移时，拉到最后一张
-        m_unit.style.left = -width * imgLength + "px";
+        m_unit.style.left = -option.width * imgLength + "px";
     }
 
-    animate(m_unit, { "left": -width * nowIndex }, animateTime, tween);
+    animate(m_unit, { "left": -option.width * option.nowIndex }, option.animateTime, option.tween);
     changeCircle();
 }
 
@@ -86,8 +91,8 @@ for(var i = 0; i < imgLength; i++) {
     // 		if(m_unit.isanimated) return;
 
     // 		// 小圆点的点击业务
-    // 		nowIndex = i;
-    // 		animate(m_unit, { "left": -width * nowIndex }, animateTime, tween);
+    // 		option.nowIndex = i;
+    // 		animate(m_unit, { "left": -option.width * option.nowIndex }, option.animateTime, option.tween);
     // 		changeCircle();
     // 	}
     // })(i)
@@ -99,8 +104,8 @@ for(var i = 0; i < imgLength; i++) {
         if(m_unit.isanimated) return;
         
         //小圆点的点击业务
-        nowIndex = this.index;
-        animate(m_unit,{"left":-width * nowIndex},animateTime,tween);
+        option.nowIndex = this.index;
+        animate(m_unit,{"left":-option.width * option.nowIndex},option.animateTime,option.tween);
         changeCircle();
     }
 }
@@ -108,9 +113,9 @@ for(var i = 0; i < imgLength; i++) {
 //更换小圆点函数
 function changeCircle(){
     //n就是信号量的副本
-    // var n = nowIndex % imgLength;
+    // var n = option.nowIndex % imgLength;
     // 三元运算写法
-    var n = nowIndex == imgLength ? 0 : nowIndex;
+    var n = option.nowIndex == imgLength ? 0 : option.nowIndex;
     //判断副本的值==imgLength，那么就是0
 
     for (let i = 0; i < circleSliderLi.length; i++) {
