@@ -30,7 +30,7 @@ var option =  {
 }
 
 
-//把0号li克隆，然后插入到图片ul的最后面
+//克隆假0到ul最后
 m_unitUl.appendChild(m_unitLi[0].cloneNode(true));
 
 // 右按钮事件
@@ -74,7 +74,7 @@ function leftBtnHandler() {
     option.nowIndex--;
     if(option.nowIndex < 0){
         option.nowIndex = imgLength - 1;
-        // 第0张图片向左移时，拉到最后一张
+        // 第0张图片向左移时，拉到假0，animate再从假0运动到真5
         m_unit.style.left = -option.width * imgLength + "px";
     }
 
