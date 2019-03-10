@@ -27,9 +27,11 @@
     left: 0;
     top: 0;
     opacity: 0;
+    display: none;
 }
 .carousel .imgUl li:nth-of-type(1) {
     opacity: 1;
+    display: block;
 }
 
 .carousel .btn a {
