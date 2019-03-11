@@ -50,6 +50,7 @@
     <script>
         // slideDown实际上是改变高度，bottom定位时就会有向上展开效果
         $(".pic").mouseenter(function() {
+            if($(".mask").is(":animated")) return;
             $(".mask").slideDown();
         })
         $(".pic").mouseleave(function() {
@@ -57,6 +58,7 @@
         })
 
         $(".pic").mouseenter(function() {
+            if($(".pic h3").is(":animated")) return;
             $(".pic h3").slideDown();
         })
 
