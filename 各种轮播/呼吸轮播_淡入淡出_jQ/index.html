@@ -43,9 +43,9 @@
         // 图片宽度
         var width = 560;
         // 运动时间
-        var time = 600;
+        var time = 1600;
         // 自动轮播间隔
-        var interval = 1500;
+        var interval = 2000;
         // 轮播图容器
         var carousel = $(".carousel");
         // 运动机构
@@ -56,14 +56,14 @@
         $(".leftBtn").click(leftBtnHandler);
 
         // 自动轮播
-        // var timerId = setInterval(rightBtnHandler, interval);
+        var timerId = setInterval(rightBtnHandler, interval);
         // 鼠标进入停止轮播
         carousel.mouseenter(function() {
-            // clearInterval(timerId);
+            clearInterval(timerId);
         });
         // 鼠标离开恢复自动轮播
         carousel.mouseleave(function() {
-            // timerId = setInterval(rightBtnHandler, interval);
+            timerId = setInterval(rightBtnHandler, interval);
         });
         // 右键轮播业务
         // 获得图片列表li的集合
