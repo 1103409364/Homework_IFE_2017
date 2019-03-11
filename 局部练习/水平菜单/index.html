@@ -171,6 +171,8 @@
     <script src="js/jquery-1.12.4.js"></script>
     <script>
         $(".nav li").mouseenter(function () {
+            // 函数节流
+            if($(this).children(".dropDown").is(":animated")) return;
             $(this).children(".dropDown").slideDown();
         })
 
