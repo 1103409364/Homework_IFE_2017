@@ -44,6 +44,8 @@
     height: 100%;
     background-color: #111;
     opacity: 0.5;
+    /* ie6 */
+    filter: alpha(opacity=50);
 }
 
 .carousel .leftBtn {
