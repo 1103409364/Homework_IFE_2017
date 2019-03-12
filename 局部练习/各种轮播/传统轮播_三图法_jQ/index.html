@@ -103,11 +103,6 @@
         var slider =  $(".carousel .slider li");
         // 小圆点指示器业务
         slider.click(function() {
-            // 让所有小圆点变为未点击状态
-            slider.css({"opacity": 0.5})
-            // 点击小圆点为选中状态
-            $(this).css({"opacity": 1});
-            
             var clickIdx = $(this).index();
             // 如果点击小圆点的序号在现有图片后，点中序号对应图片到左边准备，现图右移
             if(clickIdx > imgIdx) {
@@ -122,6 +117,8 @@
             
             imgIdx = clickIdx;
             $imgLi.eq(imgIdx).animate({left: 0}, time);
+
+            changeSlider();
         })
 
         function changeSlider() {
