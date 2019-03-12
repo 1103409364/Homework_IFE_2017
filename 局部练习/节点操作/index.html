@@ -76,7 +76,8 @@
                 if (checkipt.checked) {
                     // 取消选中状态
                     checkipt.checked = false;
-                    rightUl.appendChild(leftLi[i]);
+                    // 可以用父节点属性，也可以用leftLi[i]
+                    rightUl.appendChild(checkipt.parentNode);
                     // 每次移动li都会导致下一个li的索引-1
                     i--;
                 }
