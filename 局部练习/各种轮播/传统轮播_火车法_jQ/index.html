@@ -94,13 +94,10 @@
         var slider =  $(".carousel .slider li");
         // 小圆点指示器业务
         slider.click(function() {
-            // 让所有小圆点变为未点击状态
-            slider.css({"opacity": 0.5})
-            // 点击小圆点为选中状态
-            $(this).css({"opacity": 1});
-            // 设置信号量为当前点中的小圆点序号
             imgIdx = $(this).index();
             $moveUnit.animate({left: -imgIdx * width}, time);
+
+            changeSlider();
         })
 
         function changeSlider() {
