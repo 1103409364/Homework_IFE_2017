@@ -44,6 +44,9 @@
 
         $(".rightBtn").click(rightBtnHandler);
         $(".leftBtn").click(leftBtnHandler);
+         // 自动轮播
+        var timerId = setInterval(rightBtnHandler, interval);
+        
         $imgLi.mouseenter(function () {
             // 鼠标进入停止轮播
             clearInterval(timerId);
@@ -95,8 +98,6 @@
             })
         }
 
-         // 自动轮播
-        var timerId = setInterval(rightBtnHandler, interval);
 
 
         function leftBtnHandler() {
