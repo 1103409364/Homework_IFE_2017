@@ -44,9 +44,9 @@
         // 自动轮播间隔
         var interval = 1500;
         // 轮播图容器
-        var carousel = $(".carousel");
+        var $carousel = $(".carousel");
         // 运动机构
-        var moveUnit = $(".moveUnit");
+        var $moveUnit = $(".moveUnit");
         var imgLength = $(".moveUnit ul li").length;
         $(".moveUnit ul li:first").clone().appendTo(".moveUnit ul");
 
@@ -56,20 +56,20 @@
         // 自动轮播
         var timerId = setInterval(rightBtnHandler, interval);
         // 鼠标进入停止轮播
-        carousel.mouseenter(function() {
+        $carousel.mouseenter(function() {
             clearInterval(timerId);
         });
         // 鼠标离开恢复自动轮播
-        carousel.mouseleave(function() {
+        $carousel.mouseleave(function() {
             timerId = setInterval(rightBtnHandler, interval);
         });
         // 右键轮播业务
         function rightBtnHandler() {
-            if(moveUnit.is(":animated")) return;
+            if($moveUnit.is(":animated")) return;
 
             imgIdx++;
             // console.log(1);
-            moveUnit.animate({left: -imgIdx * width}, time, function() {
+            $moveUnit.animate({left: -imgIdx * width}, time, function() {
                 if(imgIdx == imgLength) {
                     $(this).css({"left": 0,});
                     imgIdx = 0;
@@ -80,14 +80,14 @@
         }
         // 左键轮播业务
         function leftBtnHandler() {
-            if(moveUnit.is(":animated")) return;
+            if($moveUnit.is(":animated")) return;
             imgIdx--;
             if(imgIdx < 0) {
                 imgIdx = 4;
                 // 先闪现到最后一张，再正常运动到4
-                moveUnit.css({"left": -width * imgLength});
+                $moveUnit.css({"left": -width * imgLength});
             }
-            moveUnit.animate({left: -imgIdx * width}, time);
+            $moveUnit.animate({left: -imgIdx * width}, time);
             changeSlider();
         }
         
@@ -100,7 +100,7 @@
             $(this).css({"opacity": 1});
             // 设置信号量为当前点中的小圆点序号
             imgIdx = $(this).index();
-            moveUnit.animate({left: -imgIdx * width}, time);
+            $moveUnit.animate({left: -imgIdx * width}, time);
         })
 
         function changeSlider() {

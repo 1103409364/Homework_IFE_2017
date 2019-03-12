@@ -37,50 +37,53 @@
         // 自动轮播间隔
         var interval = 1500;
         // 轮播图容器
-        var carousel = $(".carousel");
+        var $carousel = $(".carousel");
         // 运动机构
-        var moveUnit = $(".moveUnit");
+        var $moveUnit = $(".moveUnit");
         var imgLength = $(".moveUnit ul li").length;
-        var imgLi = $(".carousel .moveUnit li");
+        var $imgLi = $(".carousel .moveUnit li");
 
-        imgLi.mouseenter(function() {
+        $(".rightBtn").click(rightBtnHandler);
+        $(".leftBtn").click(leftBtnHandler);
+        $imgLi.mouseenter(function () {
+            // 鼠标进入停止轮播
+            clearInterval(timerId);
+
             imgIdx = $(this).index();
             move(imgIdx);
         })
 
-        // 在imgIdx左边的图片找到左边的位置，在imgidx右边的图片找到自己右边的位置，位置是固定的
-        function move(imgIdx) {
-            for(var i = 0; i < imgLength; i++) {
-                if(i <= imgIdx) {
-                    // stop防止动画的积累：
-                    imgLi.eq(i).stop(true).animate({"left": 60 * i}, time);
-                } else {
-                    imgLi.eq(i).stop(true).animate({"left": 500 + 60 * i}, time);
-                }
-            }
-        }
-
-        function reset() {
-            for(var i = 1; i < imgLength; i++) {
-                // stop防止动画的积累：
-                imgLi.eq(i).stop(true).animate({"left": 160 * i}, time);
-                // imgLi.eq(i).stop(true).animate({"left": 500 + 60 * i}, time);
-            }
-        }
-        $(".rightBtn").click(rightBtnHandler);
-        $(".leftBtn").click(leftBtnHandler);
-
-        // 自动轮播
-        var timerId = setInterval(rightBtnHandler , interval);
-        // 鼠标进入停止轮播
-        carousel.mouseenter(function() {
-            clearInterval(timerId);
-        });
         // 鼠标离开图片复位
-        carousel.mouseleave(function() {
+        $carousel.mouseleave(function () {
             reset();
             timerId = setInterval(rightBtnHandler, interval);
         });
+
+        // 在imgIdx左边的图片找到左边的位置，在imgidx右边的图片找到自己右边的位置，位置是固定的
+        function move(imgIdx) {
+            // 遍历
+            $imgLi.each(function (i) {
+                if (i <= imgIdx) {
+                    // stop防止动画的积累：
+                    $(this).stop(true).animate({ "left": 60 * i }, time);
+                } else {
+                    $(this).stop(true).animate({ "left": 500 + 60 * i }, time);
+                }
+            })
+        }
+
+        function reset() {
+            for (var i = 1; i < imgLength; i++) {
+                // stop防止动画的积累：
+                $imgLi.eq(i).stop(true).animate({ "left": 160 * i }, time);
+                // $imgLi.eq(i).stop(true).animate({"left": 500 + 60 * i}, time);
+            }
+        }
+
+
+        // 自动轮播
+        var timerId = setInterval(rightBtnHandler, interval);
+
 
         function leftBtnHandler() {
             // imgIdx++;
@@ -90,29 +93,29 @@
             // move(imgIdx);
             move(imgIdx);
             imgIdx += flag;
-            if(imgIdx > imgLength - 1) {
+            if (imgIdx > imgLength - 1) {
                 flag = -1;
-                imgIdx = imgLength - 1 -1;
+                imgIdx = imgLength - 1 - 1;
             }
 
-            if(imgIdx < 0) {
+            if (imgIdx < 0) {
                 flag = 1;
                 imgIdx = 1;
             }
-            
+
         }
 
         function rightBtnHandler() {
             move(imgIdx);
             // 图片按 01234 43210的顺序切换
             imgIdx -= flag;
-            if(imgIdx < 0) {
+            if (imgIdx < 0) {
                 flag = -1;
                 imgIdx = 1;
             }
-            if(imgIdx > imgLength - 1) {
+            if (imgIdx > imgLength - 1) {
                 flag = 1;
-                imgIdx = imgLength - 1 -1;
+                imgIdx = imgLength - 1 - 1;
             }
         }
 
