@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,14 @@
     <div class="carousel">
         <div class="moveUnit">
             <ul class="clearfix">
-                <li class="num0"><a href="#"><img src="img/0.jpg" alt=""></a></li>
-                <li class="num1"><a href="#"><img src="img/1.jpg" alt=""></a></li>
-                <li class="num2"><a href="#"><img src="img/2.jpg" alt=""></a></li>
-                <li class="num3"><a href="#"><img src="img/3.jpg" alt=""></a></li>
-                <li class="num4"><a href="#"><img src="img/4.jpg" alt=""></a></li>
+                <li class="num0"><a href="#"><img src="img/0.jpg" alt=""></a><div class="mask"></div></li>
+                <li class="num1"><a href="#"><img src="img/1.jpg" alt=""></a><div class="mask"></div></li>
+                <li class="num2"><a href="#"><img src="img/2.jpg" alt=""></a><div class="mask"></div></li>
+                <li class="num3"><a href="#"><img src="img/3.jpg" alt=""></a><div class="mask"></div></li>
+                <li class="num4"><a href="#"><img src="img/4.jpg" alt=""></a><div class="mask"></div></li>
             </ul>
         </div>
-       
+
         <a class="leftBtn" id="leftBtn" href="javascript:;">L</a>
         <a class="rightBtn" id="rightBtn" href="javascript:;">R</a>
     </div>
@@ -38,8 +39,6 @@
         var interval = 1500;
         // 轮播图容器
         var $carousel = $(".carousel");
-        // 运动机构
-        var $moveUnit = $(".moveUnit");
         var imgLength = $(".moveUnit ul li").length;
         var $imgLi = $(".carousel .moveUnit li");
 
@@ -63,25 +62,40 @@
         function move(imgIdx) {
             // 遍历
             $imgLi.each(function (i) {
+                $(this).stop(true);
                 if (i <= imgIdx) {
                     // stop防止动画的积累：
-                    $(this).stop(true).animate({ "left": 60 * i }, time);
+                    $(this).animate({
+                        "left": 60 * i
+                    }, time);
+                    if(i == imgIdx) {
+                        $(this).children(".mask").fadeOut(time);
+                    } else {
+                        $(this).children(".mask").fadeIn(time);
+                    }
                 } else {
-                    $(this).stop(true).animate({ "left": 500 + 60 * i }, time);
+                    $(this).animate({
+                        "left": 500 + 60 * i
+                    }, time);
+
+                    $(this).children(".mask").fadeIn(time);
+                }
+
+                if(i == imgIdx) {
                 }
             })
         }
-
+        // 重置默认状态
         function reset() {
-            for (var i = 1; i < imgLength; i++) {
-                // stop防止动画的积累：
-                $imgLi.eq(i).stop(true).animate({ "left": 160 * i }, time);
-                // $imgLi.eq(i).stop(true).animate({"left": 500 + 60 * i}, time);
-            }
+            $imgLi.each(function (i) {
+                $(this).stop(true).animate({
+                    "left": 160 * i
+                }, time);
+                $(this).children(".mask").fadeIn(time);
+            })
         }
 
-
-        // 自动轮播
+         // 自动轮播
         var timerId = setInterval(rightBtnHandler, interval);
 
 
@@ -118,7 +132,7 @@
                 imgIdx = imgLength - 1 - 1;
             }
         }
-
     </script>
 </body>
+
 </html>
