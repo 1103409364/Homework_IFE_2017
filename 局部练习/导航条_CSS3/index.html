@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .inner_center {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            visibility: hidden;
+            height: 0;
+            clear: both;
+        }
+
+        header {
+            width: 100%;
+            background-color: #252525;
+        }
+
+        header nav li {
+            list-style: none;
+            float: left;
+            position: relative;
+            height: 50px;
+        }
+
+        header nav li a {
+            display: block;
+            text-decoration: none;
+            color: #e0dede;
+            font-size: 14px;
+            line-height: 50px;
+            height: 46px;
+            width: 50px;
+            text-align: center;
+            padding-left: 40px;
+            transition: background 0.5s ease 0s;
+        }
+
+        header nav li a:hover {
+            color: red;
+            /* height: 46px; */
+            border-bottom: 4px solid red;
+            background-color: #fff;
+        }
+
+        header nav li:nth-of-type(1) a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 31px;
+            height: 30px;
+            background: url(img/tingicos.png) no-repeat -80px 0;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(1):hover a::before {
+            background: url(img/tingicos.png) no-repeat -80px -113px;
+        }
+
+        header nav li:nth-of-type(2) a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 31px;
+            height: 30px;
+            background: url(img/tingicos.png) no-repeat -84px -764px;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(2):hover a::before {
+            background: url(img/tingicos.png) no-repeat -84px -734px;
+        }
+
+        header nav li:nth-of-type(3) a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 31px;
+            height: 30px;
+            background: url(img/tingicos.png) no-repeat -84px -603px;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(3):hover a::before {
+            background: url(img/tingicos.png) no-repeat -84px -664px;
+        }
+
+        header nav li:nth-of-type(4) a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 31px;
+            height: 28px;
+            background: url(img/tingicos.png) no-repeat -80px -30px;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(4):hover a::before {
+            background: url(img/tingicos.png) no-repeat -80px -143px;
+        }
+
+        header nav li:nth-of-type(5) a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 31px;
+            height: 30px;
+            background: url(img/tingicos.png) no-repeat -84px -573px;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(5):hover a::before {
+            background: url(img/tingicos.png) no-repeat -84px -634px;
+        }
+
+        header nav li:nth-of-type(6) a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 31px;
+            height: 30px;
+            background: url(img/tingicos.png) no-repeat -84px -573px;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(6):hover a::before {
+            background: url(img/tingicos.png) no-repeat -84px -634px;
+        }
+
+        header nav li:nth-of-type(7) a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 39px;
+            height: 24px;
+            background: url(img/tingicos.png) no-repeat -76px -58px;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(7):hover a::before {
+            background: url(img/tingicos.png) no-repeat -76px -170px;
+        }
+
+        header nav li:nth-of-type(7) a b {
+            color: #fff;
+            line-height: 24px;
+            position: absolute;
+            left: 5px;
+            top: 55px;
+            width: 80px;
+            height: 24px;
+            border-radius: 12px;
+            background-color: #ff00009a;
+            opacity: 0;
+            transition: all 0.5s ease 0s;
+        }
+
+        header nav li:nth-of-type(7) a b::after {
+            position: absolute;
+            content: "";
+            left: 32px;
+            top: -12px;
+            width: 0;
+            height: 0;
+            border: 6px solid #ff00009a;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        header nav li:nth-of-type(7):hover a b {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="inner_center">
+            <ul class="clearfix">
+                <li><a href="javascript:;">最新</a></li>
+                <li><a href="javascript:;">电台</a></li>
+                <li><a href="javascript:;">单曲</a></li>
+                <li><a href="javascript:;">专辑</a></li>
+                <li><a href="javascript:;">MV</a></li>
+                <li><a href="javascript:;">查找</a></li>
+                <li><a href="javascript:;">留言<b>点我留言</b></a></li>
+            </ul>
+        </nav>
+        <div class="share"></div>
+        <div class="landing"></div>
+    </header>
+</body>
+
+</html>
