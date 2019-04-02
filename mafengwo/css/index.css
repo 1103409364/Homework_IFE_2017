@@ -154,8 +154,8 @@ nav ul {
 nav ul li {
     float: left;
     background-color: #999;
-    height: 5rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
     margin: 1rem;
     position: relative;
 }
@@ -174,17 +174,17 @@ nav ul li:nth-of-type(1) a {
 
 @media screen and (max-width: 450px) {
     html {
-        font-size: 14.5px;
+        font-size: 15.6px;
     }
 }
 
-@media screen and (min-width:450px) and (max-width: 500px) {
+/* @media screen and (min-width:450px) and (max-width: 500px) {
     html {
         font-size: 16px;
     }
-}
+} */
 
-@media screen and (min-width:500px) and (max-width: 600px) {
+/* @media screen and (min-width:500px) and (max-width: 600px) {
     html {
         font-size: 19px;
     }
@@ -194,4 +194,4 @@ nav ul li:nth-of-type(1) a {
     html {
         font-size: 22px;
     }
-}
+} */
