@@ -9,7 +9,7 @@
   }
 
 @innerWidth: 900px;
-@liHeight: 50px;
+@lineHeight: 40px;
 html, body {
 	height: 100%;
 	font-size: 16px;
@@ -71,32 +71,31 @@ body {
 				position: relative;
 				transition: all 0.3s ease;
 				// box-shadow: 0 2px 4px #3b3b3b;
+				// display: flex;
+				flex-direction: column;
 
 				b {
 					position: absolute;
 					right: 1rem;
-					transition: all 0.3s ease;
+					transition: all 0.3s ease-out;
 					z-index: -1;
 				}
 
 				div.list {
 					transition: all 0.3s ease;
-					height: 0;
+					max-height: 0;
+					// flex: 0 1 0;
 					overflow: hidden;
+					p:nth-of-type(1) {
+						border-top: 2px dashed #e0e0e0;
+					}
+					
 					p {
 						color: #000;
 						background-color: #fff;
 						padding: 0 1rem;
 						font-size: 14px;
-						user-select: text;
-					}
-
-					h3 {
-						color: #000;
-						background-color: #fff;
-						padding: 0 1rem;
-						font-size: 16px;
-						font-weight: bold;
+						line-height: @lineHeight;
 						user-select: text;
 					}
 				}
@@ -104,30 +103,13 @@ body {
 			}
 
 			li.down {
-				// background-color: #2830529d;
-				// rgba 兼容微信
-				// background-color: rgba(40, 48, 82, 0.616);
-				// color: #fff;
 				b.arrow {
 					color: rgb(0, 0, 0);
 					transform: rotate(90deg);
 				}
-
-				div.js {
-					height: @liHeight * 6;
-				}
-				div.hc {
-					height: @liHeight * 6;
-				}
-				div.react {
-					height: @liHeight * 1;
-				}
-				div.node {
-					height: @liHeight * 5;
-				}
-				div.ui {
-					height: @liHeight * 5;
-				}
+				 div.list {
+					max-height: @lineHeight * 6;
+				 }
 			}
 		}
 	}

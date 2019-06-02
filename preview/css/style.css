@@ -57,49 +57,34 @@ body .objlist ul.main li {
   border-top: none;
   position: relative;
   transition: all 0.3s ease;
+  flex-direction: column;
 }
 body .objlist ul.main li b {
   position: absolute;
   right: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
   z-index: -1;
 }
 body .objlist ul.main li div.list {
   transition: all 0.3s ease;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
+}
+body .objlist ul.main li div.list p:nth-of-type(1) {
+  border-top: 2px dashed #e0e0e0;
 }
 body .objlist ul.main li div.list p {
   color: #000;
   background-color: #fff;
   padding: 0 1rem;
   font-size: 14px;
-  user-select: text;
-}
-body .objlist ul.main li div.list h3 {
-  color: #000;
-  background-color: #fff;
-  padding: 0 1rem;
-  font-size: 16px;
-  font-weight: bold;
+  line-height: 40px;
   user-select: text;
 }
 body .objlist ul.main li.down b.arrow {
   color: #000000;
   transform: rotate(90deg);
 }
-body .objlist ul.main li.down div.js {
-  height: 300px;
-}
-body .objlist ul.main li.down div.hc {
-  height: 300px;
-}
-body .objlist ul.main li.down div.react {
-  height: 50px;
-}
-body .objlist ul.main li.down div.node {
-  height: 250px;
-}
-body .objlist ul.main li.down div.ui {
-  height: 250px;
+body .objlist ul.main li.down div.list {
+  max-height: 240px;
 }
