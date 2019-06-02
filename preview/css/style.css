@@ -28,7 +28,6 @@ body .objlist h1 {
   color: #fff;
   background-color: #263238;
   text-indent: 1rem;
-  /* box-shadow: 0 0 4px #3b3b3b; */
   position: relative;
 }
 body .objlist h1 span {
@@ -56,10 +55,8 @@ body .objlist ul.main li {
   box-sizing: border-box;
   border: 2px solid #263238;
   border-top: none;
-  cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
-  /* box-shadow: 0 2px 4px #3b3b3b; */
 }
 body .objlist ul.main li b {
   position: absolute;
@@ -77,6 +74,15 @@ body .objlist ul.main li div.list p {
   background-color: #fff;
   padding: 0 1rem;
   font-size: 14px;
+  user-select: text;
+}
+body .objlist ul.main li div.list h3 {
+  color: #000;
+  background-color: #fff;
+  padding: 0 1rem;
+  font-size: 16px;
+  font-weight: bold;
+  user-select: text;
 }
 body .objlist ul.main li.down b.arrow {
   color: #000000;
@@ -92,5 +98,8 @@ body .objlist ul.main li.down div.react {
   height: 50px;
 }
 body .objlist ul.main li.down div.node {
-  height: 50px;
+  height: 250px;
+}
+body .objlist ul.main li.down div.ui {
+  height: 250px;
 }
