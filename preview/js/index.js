@@ -5,9 +5,9 @@ function slideToggle(e) {
     let target = e.target;
 
     // 如果点击中的节点含有href属性，不阻止默认事件
-    if(!target.href) {
-        e.preventDefault();
-    }
+    // if(!target.href) {
+    //     e.preventDefault();
+    // }
 
     target.classList.toggle("down");
 }
