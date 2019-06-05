@@ -81,6 +81,10 @@ body .objlist ul.main li div.list p {
   line-height: 40px;
   user-select: text;
 }
+body .objlist ul.main li div.list h3 {
+  padding: 0 1rem;
+  font-weight: bold;
+}
 body .objlist ul.main li.down b.arrow {
   color: #000000;
   transform: rotate(90deg);
